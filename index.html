@@ -435,6 +435,43 @@ React keys must be passed directly to JSX without using spread:
   </head>
   <body>
     <div id="root"></div>
+    <div id="root"></div>
+
+    <style>
+      .floating-inquiry-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 84px;      /* 동그라미 크기 증가 (기존 64px) */
+        height: 84px;     /* 동그라미 크기 증가 (기존 64px) */
+        background-color: #2563eb; /* blue-600 */
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 16px;  /* 4글자가 안정적으로 보이도록 폰트 크기 미세 조정 */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 9999;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        border: none;
+        word-break: keep-all; /* 글자가 이상하게 줄바꿈되지 않도록 방지 */
+      }
+      .floating-inquiry-btn:hover {
+        transform: scale(1.1);
+        background-color: #3b82f6; /* blue-500 */
+      }
+    </style>
+    <button 
+      class="floating-inquiry-btn" 
+      onclick="window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })"
+    >
+      상담문의
+    </button>
+  </body>
+</html>
   </body>
 </html>
 
